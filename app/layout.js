@@ -1,5 +1,14 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import "../public/assets/css/aos.css";
+import "../public/assets/css/main.css";
+import "../public/assets/css/bootstrap.min.css";
+import "../public/assets/css/swiper-bundle.css";
+import "../public/assets/css/magnific-popup.css";
+import "../public/assets/css/odometer-theme-default.css";
+import BackToTop from "@/public/components/common/BackToTop";
+import Cursor from "@/public/components/common/Cursor";
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -17,12 +26,15 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+
   return (
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <Cursor />
         {children}
+        <BackToTop />
       </body>
     </html>
   );
