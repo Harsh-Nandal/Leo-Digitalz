@@ -58,10 +58,10 @@ export default function AboutAndPortfolio() {
                     <PiCaretRightBold />
                   </li>
                   <li className="tw-text-lg fw-medium"> 
-                    <span className="text-white"> About Agenki </span> 
+                    <span className="text-white"> About LeoDigitalz </span> 
                   </li>
                 </ul>
-                <h2 className="breadcrumb-title tw-mb-6 text-white tw-text-29 text-uppercase lh-1"> About Agenki</h2>
+                <h2 className="breadcrumb-title tw-mb-6 text-white tw-text-29 text-uppercase lh-1"> About LeoDigitalz</h2>
               </div>
             </div>
           </div>

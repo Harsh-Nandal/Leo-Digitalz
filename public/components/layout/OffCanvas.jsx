@@ -58,7 +58,7 @@ export default function OffCanvas() {
         <Link href="/" className="d-block">
           <Image
             src="/assets/images/logo/main_logo_header.png"
-            alt="Agenki Logo"
+            alt="LeoDigitalz Logo"
             width={150}
             height={50}
             priority
@@ -70,7 +70,7 @@ export default function OffCanvas() {
       {/* TITLE */}
       <div className="offcanvas__title mb-5">
         <p className="lead text-white mb-0 lh-lg">
-          Agenki is the partner of choice for many of the world&apos;s leading
+          LeoDigitalz is the partner of choice for many of the world&apos;s leading
           enterprises. We help businesses development.
         </p>
       </div>
@@ -86,11 +86,11 @@ export default function OffCanvas() {
           <li className="d-flex align-items-start mb-4">
             <i className="ph ph-envelope text-primary fs-4 me-3 mt-1 flex-shrink-0"></i>
             <a 
-              href="mailto:agenkiinfo@mail.com" 
+              href="mailto:LeoDigitalzinfo@mail.com" 
               className="text-white text-decoration-none hover-primary transition-all"
-              aria-label="Email Agenki"
+              aria-label="Email LeoDigitalz"
             >
-              agenkiinfo@mail.com
+              LeoDigitalzinfo@mail.com
             </a>
           </li>
           <li className="d-flex align-items-start">
@@ -98,7 +98,7 @@ export default function OffCanvas() {
             <a 
               href="tel:+48555223224" 
               className="text-white text-decoration-none hover-primary transition-all"
-              aria-label="Call Agenki"
+              aria-label="Call LeoDigitalz"
             >
               (+00) 678 345 98568
             </a>
