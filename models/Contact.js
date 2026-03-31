@@ -7,8 +7,12 @@ const ContactSchema = new mongoose.Schema(
     phone: String,
     department: String,
     message: String,
+    status: {
+      type: String,
+      default: "new", // new | pending | contacted
+    },
   },
-  { timestamps: true }
+  { timestamps: true },
 );
 
 export default mongoose.models.Contact ||

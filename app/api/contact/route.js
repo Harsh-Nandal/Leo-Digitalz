@@ -4,16 +4,45 @@ import { Resend } from "resend";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
+// ✅ GET ALL LEADS
+export async function GET() {
+  try {
+    await connectDB();
+
+    const data = await Contact.find()
+      .sort({ createdAt: -1 })
+      .lean();
+
+    return Response.json({
+      success: true,
+      data,
+    });
+  } catch (error) {
+    return Response.json({
+      success: false,
+      message: "Failed to fetch leads ❌",
+    });
+  }
+}
+
+// ✅ CREATE LEAD (FORM SUBMIT)
 export async function POST(req) {
   try {
     const body = await req.json();
 
     const { name, email, phone, department, message } = body;
 
-    // ✅ Connect DB
+    // 🔥 Basic validation
+    if (!name || !email || !phone) {
+      return Response.json({
+        success: false,
+        message: "Required fields missing ❌",
+      });
+    }
+
     await connectDB();
 
-    // ✅ Save to MongoDB
+    // ✅ Save to DB
     const newContact = await Contact.create({
       name,
       email,
@@ -22,13 +51,13 @@ export async function POST(req) {
       message,
     });
 
-    // ✅ Send Email via Resend
+    // ✅ Send Email
     await resend.emails.send({
-      from: "onboarding@resend.dev", // default test sender
-      to: process.env.EMAIL_USER, // your email
-      subject: "New Contact Form Submission",
+      from: "onboarding@resend.dev",
+      to: process.env.EMAIL_USER,
+      subject: "📩 New Contact Lead",
       html: `
-        <h2>New Contact Message</h2>
+        <h2>New Lead Received 🚀</h2>
         <p><b>Name:</b> ${name}</p>
         <p><b>Email:</b> ${email}</p>
         <p><b>Phone:</b> ${phone}</p>
@@ -39,12 +68,12 @@ export async function POST(req) {
 
     return Response.json({
       success: true,
-      message: "Form submitted successfully 🚀",
+      message: "Lead saved successfully ✅",
       data: newContact,
     });
 
   } catch (error) {
-    console.error("API ERROR:", error);
+    console.error("POST ERROR:", error);
 
     return Response.json({
       success: false,

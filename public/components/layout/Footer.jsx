@@ -131,7 +131,7 @@ export default function Footer() {
         <div className="tw-py-8 border-top border-neutral-700">
           <div className="footer-copyright-wrapper d-flex align-items-center justify-content-between tw-gap-4 flex-wrap">
             <p className="text-white-50 mb-0">
-              © <Link href="/" className="fw-semibold text-main-600 hover-text-white">LeoDigitalz</Link> 2026. All rights reserved
+              © <Link href="/" className="fw-semibold text-main-600 hover-text-white">Leo.Digitalz</Link> 2026. All rights reserved
             </p>
             <ul className="footer-social d-flex align-items-center tw-gap-4 list-unstyled mb-0">
               {[
